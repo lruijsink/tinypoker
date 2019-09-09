@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>TinyPoker</title>
+        <script src="utility.js"></script>
+        <script src="poker.js"></script>
+        <script src="client.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto|Playfair+Display|Crimson+Text&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="layout.css" />
+    </head>
+    <body>
+	    <div id="content">
+		    <div id="game">
+		        <span class="client-input-label">Your player number: (1 or 2)</span>
+		        <input class="client-input" type="text" id="playerID" autocomplete="off" />
+		        <span class="client-input-label">Your magic number: (5 digits)</span>
+		        <input class="client-input" type="text" id="playerKey" autocomplete="off" />
+
+		        <span class="client-input-label">Copy host code here:</span>
+		        <input class="client-input" type="text" id="hostInput" autocomplete="off" />
+
+		        <input class="client-button" type="button" value="Process input" autocomplete="off" onclick="processInput()" />
+
+		        <span class="output-label">Your hole cards:</span>
+		        <div id="holeCards" class="output"></div>
+
+		        <span class="output-label">Community cards:</span>
+		        <div id="communityCards" class="output"></div>
+
+		        <span class="output-label">Showdown:</span>
+		        <div id="showdown" class="output"></div>
+
+		        <div id="hostControls">
+		            <span class="host-controls-output-label" autocomplete="off">Host code:</span>
+		            <input class="host-controls-output" id="hostOutput" autocomplete="off" />
+		            <input class="host-controls-button" type="button" value="Shuffle deck" id="shuffleDeckButton" onclick="shuffleDeck()" autocomplete="off" />
+		            <input class="host-controls-button" type="button" value="Deal hole cards" id="dealHoleCardsButton" onclick="dealHoleCards()" disabled autocomplete="off" />
+		            <input class="host-controls-button" type="button" value="Deal flop" id="dealFlopButton" onclick="dealFlop()" disabled autocomplete="off" />
+		            <input class="host-controls-button" type="button" value="Deal turn" id="dealTurnButton" onclick="dealTurn()" disabled autocomplete="off" />
+		            <input class="host-controls-button" type="button" value="Deal river" id="dealRiverButton" onclick="dealRiver()" disabled autocomplete="off" />
+		            <input class="host-controls-button" type="button" value="Showdown" id="showdownButton" onclick="showdown()" disabled autocomplete="off" />
+		            <br />
+		            Player 1 magic number: <input class="host-controls-textbox" type="text" id="player1key" autocomplete="off" /><br />
+		            Player 2 magic number: <input class="host-controls-textbox" type="text" id="player2key" autocomplete="off" />
+		        </div>
+		    </div>
+	    	<div id="guide">
+	    		<h1>TinyPoker</h1>
+	    		<p>Play poker on any messaging app, with hole card secrecy!</p>
+	    		<p>By using (terrible) cryptography, neither player can see what the other&apos;s holding is. No direct connection needed!</p>
+	    		<p>Assign player numbers 1 and 2, select a host and pick a 5-digit magic number, then tell that number to the host. After each phase the host gets a new code, copy-paste that into the text box and hit "Process input."</p>
+	    		<p>Hosting is easy, just enter both magic numbers into the controls at the bottom and cycle through the phases. The host too must enter and process the codes!</p>
+	    		<p>Source code available on <a href="https://github.com/lruijsink/tinypoker">GitHub</a>.</p>
+	    	</div>
+		</div>
+    </body>
+</html>
